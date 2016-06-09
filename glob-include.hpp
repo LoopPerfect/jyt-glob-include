@@ -1,6 +1,7 @@
 #ifndef GLOB_INCLUDE_HPP
 #define GLOB_INCLUDE_HPP
 
+#include <jyt/runtime.hpp>
 #include "glob.hpp"
 
 namespace glob {
@@ -8,7 +9,7 @@ namespace glob {
   void globInclude(std::string path) {
     Glob files(path);
     while (files) {
-      include("./"+files.GetFileName()); //jyt meta function
+      jyt.include("./"+files.GetFileName()); //jyt meta function
       files.Next();
     }
   }
